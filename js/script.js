@@ -10,6 +10,43 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+var quotes= [{
+  quote: 'Be the change that you want to see in the world',
+  source: 'Mahatma Gandhi'
+},{
+  quote: 'An eye for an eye will make the whole world blind',
+  source: 'Mahatma Gandhi'
+},{
+  quote: 'If you’re going through hell, keep going.',  
+  source: 'Winston Churchill'
+},{
+  quote: 'You have enemies? Good. That means you’ve stood up for something, sometime in your life.',
+  source: 'Winston churchill'
+},{
+  quote: 'Hmmmmm',
+  source: 'Geralt of Rivia'
+},{
+  quote: 'Fuck',
+  source: 'Geralt of Rivia'
+},{
+  quote: 'It\'s not a bug. It is a feature',
+  source: 'Annoyed developer',
+  citation: 'Every project with bugs'
+},{
+  quote: '"You want weapons? We\'re in a library! Books! Best weapons in the world!"',
+  source: '10th Doctor',
+  citation: 'Doctor who Season 2 episode 2 - "Tooth and Claw"',
+  year: 2007
+},{
+  quote: 'Never be cruel, \n Never be cowardly... \n Remember \n Hate is always Foolish \n Love is always Wise \n Always try to be nice \n But never fail to be kind \n Laugh hard... \n Run fast... \n Be kind.',
+  source: '12th Doctor',
+  citation: 'Doctor who - "Twice upon a time"',
+  year: 2017
+},{
+  quote: 'We’ve all got both light and dark inside us. What matters is the part we choose to act on. That’s who we really are.',
+  source: 'J. K. Rowling',
+  citation: 'Harry Potter and the Order of the Phoenix'
+}];
 
 
 
