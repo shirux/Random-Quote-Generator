@@ -46,7 +46,22 @@ var quotes= [{
   quote: 'We’ve all got both light and dark inside us. What matters is the part we choose to act on. That’s who we really are.',
   source: 'J. K. Rowling',
   citation: 'Harry Potter and the Order of the Phoenix'
-}];
+},{
+  quote: 'Wait A Minute, Doc. Are You Telling Me You Built A Time Machine...Out Of A DeLorean?',
+  source: 'Marty McFly',
+  citation: 'Back to the future'
+},,{
+  quote: 'Hasta la vista, Baby',
+  source: 'Terminator',
+  citation: 'Terminator 2'
+},{
+  quote: 'The Red Army and Navy and the whole Soviet people must fight for every inch of Soviet soil, fight to the last drop of blood for our towns and villages... onward, to victory!',
+  source: 'Joseph Stalin',
+  citation: 'World War II - Joseph Stalin Soviet leader',
+  year: 1941
+}
+
+];
 
 
 
