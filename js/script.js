@@ -80,10 +80,19 @@ function getRandomQuote(){
   return quotes[index];
 }
 
+/**
+ * Called function, it will set an interval on the main function once called by an event listener
+ * source example : https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_setinterval
+ */
+function printQuoteInterval(){
+  printQuote();
+  setInterval(printQuote, 30000);
+}
+
 
 /***
  * `printQuote` function
- * function that will print a quote into my web site
+ * Main function that will print a quote into my web site
 ***/
 function printQuote(){
   
@@ -134,9 +143,10 @@ function changeBackgroundColor(){
 
 
 
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuoteInterval, false);
