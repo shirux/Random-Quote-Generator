@@ -83,6 +83,7 @@ function getRandomQuote(){
 
 /***
  * `printQuote` function
+ * function that will print a quote into my web site
 ***/
 function printQuote(){
   
