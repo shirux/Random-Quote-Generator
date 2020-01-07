@@ -103,6 +103,32 @@ function printQuote(){
 
   //set quoteHTML right into the div element
   document.getElementById("quote-box").innerHTML = quoteHTML;
+
+  //change background color
+  changeBackgroundColor();
+}
+
+/**
+ * returns a random number between 0 and 255 
+ */
+function randomNumberRGB(){
+  return Math.floor(Math.random()*256);
+}
+
+/**
+ * Function that will change backgroun color for each call
+ */
+function changeBackgroundColor(){
+  //set my rgb values
+  var red = randomNumberRGB();
+  var green = randomNumberRGB();
+  var blue = randomNumberRGB();
+
+  /**
+   * grab my body element, source : https://developer.mozilla.org/en-US/docs/Web/API/Document/body
+   * set background color, source : https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
+   */
+  document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 }
 
 
