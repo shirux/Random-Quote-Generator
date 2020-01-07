@@ -10,6 +10,9 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
+/**
+ * My array of different quotes objects, it contains quote and source, and may contain year and citation
+ */
 var quotes= [{
   quote: 'Be the change that you want to see in the world',
   source: 'Mahatma Gandhi'
@@ -68,12 +71,19 @@ var quotes= [{
 /***
  * `getRandomQuote` function
 ***/
-
+/**
+ * Function that will return a random number between 1 and the length of my quotes array
+ */
+function getRandomQuote(){
+  var index = Math.floor(Math.random() * quotes.length );
+  return quotes[index];
+}
 
 
 /***
  * `printQuote` function
 ***/
+
 
 
 
