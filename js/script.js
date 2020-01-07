@@ -53,7 +53,7 @@ var quotes= [{
   quote: 'Wait A Minute, Doc. Are You Telling Me You Built A Time Machine...Out Of A DeLorean?',
   source: 'Marty McFly',
   citation: 'Back to the future'
-},,{
+},{
   quote: 'Hasta la vista, Baby',
   source: 'Terminator',
   citation: 'Terminator 2'
@@ -76,6 +76,7 @@ var quotes= [{
  */
 function getRandomQuote(){
   var index = Math.floor(Math.random() * quotes.length );
+  console.log(index);
   return quotes[index];
 }
 
@@ -83,7 +84,26 @@ function getRandomQuote(){
 /***
  * `printQuote` function
 ***/
+function printQuote(){
+  
+  // grab a randomQuote from quotes
+  var randomQuote = getRandomQuote();
 
+  //build my quote inner HTML
+  var quoteHTML = '';
+  quoteHTML += '<p class="quote"> ' + randomQuote["quote"] + ' </p>';
+  quoteHTML += '<p class="source"> ' + randomQuote["source"];
+  
+  //if quote has citation or year
+  if(randomQuote["citation"])
+    quoteHTML += '<span class="citation"> ' + randomQuote["citation"] + ' </span>'
+  if(randomQuote["year"])
+    quoteHTML += '<span class="year"> ' + randomQuote["year"] + ' </span>'
+  quoteHTML += '</p>';
+
+  //set quoteHTML right into the div element
+  document.getElementById("quote-box").innerHTML = quoteHTML;
+}
 
 
 
