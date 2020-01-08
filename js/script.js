@@ -31,10 +31,6 @@ var quotes= [{
   source: 'Geralt of Rivia',
   tags: ['games', 'humor']
 },{
-  quote: 'Fuck',
-  source: 'Geralt of Rivia',
-  tags: ['games', 'humor']
-},{
   quote: 'It\'s not a bug. It is a feature',
   source: 'Annoyed developer',
   citation: 'Every project with bugs',
