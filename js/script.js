@@ -15,7 +15,8 @@ project 1 - A Random Quote Generator
  */
 var quotes= [{
   quote: 'Be the change that you want to see in the world',
-  source: 'Mahatma Gandhi'
+  source: 'Mahatma Gandhi',
+  tags: ['political']
 },{
   quote: 'An eye for an eye will make the whole world blind',
   source: 'Mahatma Gandhi'
@@ -27,36 +28,44 @@ var quotes= [{
   source: 'Winston churchill'
 },{
   quote: 'Hmmmmm',
-  source: 'Geralt of Rivia'
+  source: 'Geralt of Rivia',
+  tags: ['games', 'humor']
 },{
   quote: 'Fuck',
-  source: 'Geralt of Rivia'
+  source: 'Geralt of Rivia',
+  tags: ['games', 'humor']
 },{
   quote: 'It\'s not a bug. It is a feature',
   source: 'Annoyed developer',
-  citation: 'Every project with bugs'
+  citation: 'Every project with bugs',
+  tags: ['humor']
 },{
   quote: '"You want weapons? We\'re in a library! Books! Best weapons in the world!"',
   source: '10th Doctor',
   citation: 'Doctor who Season 2 episode 2 - "Tooth and Claw"',
-  year: 2007
+  year: 2007,
+  tags: ['tv', 'pop']
 },{
   quote: 'Never be cruel, \n Never be cowardly... \n Remember \n Hate is always Foolish \n Love is always Wise \n Always try to be nice \n But never fail to be kind \n Laugh hard... \n Run fast... \n Be kind.',
   source: '12th Doctor',
   citation: 'Doctor who - "Twice upon a time"',
-  year: 2017
+  year: 2017,
+  tags: ['tv', 'pop']
 },{
   quote: 'We’ve all got both light and dark inside us. What matters is the part we choose to act on. That’s who we really are.',
   source: 'J. K. Rowling',
-  citation: 'Harry Potter and the Order of the Phoenix'
+  citation: 'Harry Potter and the Order of the Phoenix',
+  tags: ['book', 'pop']
 },{
   quote: 'Wait A Minute, Doc. Are You Telling Me You Built A Time Machine...Out Of A DeLorean?',
   source: 'Marty McFly',
-  citation: 'Back to the future'
+  citation: 'Back to the future',
+  tags: ['movie', 'pop']
 },{
   quote: 'Hasta la vista, Baby',
   source: 'Terminator',
-  citation: 'Terminator 2'
+  citation: 'Terminator 2',
+  tags: ['movie', 'pop']
 },{
   quote: 'The Red Army and Navy and the whole Soviet people must fight for every inch of Soviet soil, fight to the last drop of blood for our towns and villages... onward, to victory!',
   source: 'Joseph Stalin',
@@ -104,12 +113,25 @@ function printQuote(){
   quoteHTML += '<p class="quote"> ' + randomQuote["quote"] + ' </p>';
   quoteHTML += '<p class="source"> ' + randomQuote["source"];
   
-  //if quote has citation or year
+  //if quote has citation or year 
   if(randomQuote["citation"])
-    quoteHTML += '<span class="citation"> ' + randomQuote["citation"] + ' </span>'
+    quoteHTML += '<span class="citation"> ' + randomQuote["citation"] + ' </span>';
   if(randomQuote["year"])
-    quoteHTML += '<span class="year"> ' + randomQuote["year"] + ' </span>'
+    quoteHTML += '<span class="year"> ' + randomQuote["year"] + ' </span>';
   quoteHTML += '</p>';
+
+  //if quote has tags
+  if(randomQuote["tags"]){
+    quoteHTML += '<p class="tags"><i>';
+    for(var i = 0; i < randomQuote["tags"].length; i++){
+      if(i === 0)
+        quoteHTML += randomQuote["tags"][i];
+      else 
+        quoteHTML += ', ' + randomQuote["tags"][i];
+    }
+    quoteHTML += '</i></p>';
+  }
+  
 
   //set quoteHTML right into the div element
   document.getElementById("quote-box").innerHTML = quoteHTML;
