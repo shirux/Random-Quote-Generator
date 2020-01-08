@@ -7,6 +7,12 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
+// -----------------------
+// VARIABLES
+// -----------------------
+
+var myTimer;
+
 /*** 
  * `quotes` array 
 ***/
@@ -28,10 +34,6 @@ var quotes= [{
   source: 'Winston churchill'
 },{
   quote: 'Hmmmmm',
-  source: 'Geralt of Rivia',
-  tags: ['games', 'humor']
-},{
-  quote: 'Fuck',
   source: 'Geralt of Rivia',
   tags: ['games', 'humor']
 },{
@@ -76,6 +78,24 @@ var quotes= [{
 ];
 
 
+// -----------------------------
+// FUNCTIONS
+// -----------------------------
+
+/**
+ * functions to start and stop quote intervals
+ * source : robertpm
+ * source example : https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_setinterval
+ */
+function startPrintQuoteInterval(){
+  myTimer = setInterval(printQuote, 30000);
+}
+
+function stopPrintQuoteInterval(){
+  if(myTimer)
+    myTimer = clearInterval(myTimer);
+}
+
 
 /***
  * `getRandomQuote` function
@@ -89,21 +109,16 @@ function getRandomQuote(){
   return quotes[index];
 }
 
-/**
- * Called function, it will set an interval on the main function once called by an event listener
- * source example : https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_setinterval
- */
-function printQuoteInterval(){
-  printQuote();
-  setInterval(printQuote, 30000);
-}
-
 
 /***
  * `printQuote` function
  * Main function that will print a quote into my web site
 ***/
 function printQuote(){
+
+  //set intervals
+  stopPrintQuoteInterval();
+  startPrintQuoteInterval();
   
   // grab a randomQuote from quotes
   var randomQuote = getRandomQuote();
@@ -171,4 +186,4 @@ function changeBackgroundColor(){
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuoteInterval, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
