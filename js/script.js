@@ -113,12 +113,25 @@ function printQuote(){
   quoteHTML += '<p class="quote"> ' + randomQuote["quote"] + ' </p>';
   quoteHTML += '<p class="source"> ' + randomQuote["source"];
   
-  //if quote has citation or year
+  //if quote has citation or year 
   if(randomQuote["citation"])
-    quoteHTML += '<span class="citation"> ' + randomQuote["citation"] + ' </span>'
+    quoteHTML += '<span class="citation"> ' + randomQuote["citation"] + ' </span>';
   if(randomQuote["year"])
-    quoteHTML += '<span class="year"> ' + randomQuote["year"] + ' </span>'
+    quoteHTML += '<span class="year"> ' + randomQuote["year"] + ' </span>';
   quoteHTML += '</p>';
+
+  //if quote has tags
+  if(randomQuote["tags"]){
+    quoteHTML += '<p class="tags"><i>';
+    for(var i = 0; i < randomQuote["tags"].length; i++){
+      if(i === 0)
+        quoteHTML += randomQuote["tags"][i];
+      else 
+        quoteHTML += ', ' + randomQuote["tags"][i];
+    }
+    quoteHTML += '</i></p>';
+  }
+  
 
   //set quoteHTML right into the div element
   document.getElementById("quote-box").innerHTML = quoteHTML;
